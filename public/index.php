@@ -27,12 +27,11 @@
 					$query = $pdo->query("SELECT * FROM `messages` ORDER BY `id` ASC");
 					$count = 1;
 					while($fetch = $query->fetch()){
-						// var_dump($fetch);
 				?>
                 <div>
-					<span><?php echo $fetch['message']?></span>
+					<span><?php echo htmlspecialchars($fetch['message'])?></span>
 					<td >
-                    <button class="delete-button"><a href="../queries SQL/delete_query.php?task_id=<?php echo $fetch['id']?>">delete</a></button>
+                    <button class="delete-button"><a href="../queries SQL/delete_query.php?task_id=<?php echo htmlspecialchars($fetch['id'])?>">delete</a></button>
 					</div>
 				<?php
 					}
