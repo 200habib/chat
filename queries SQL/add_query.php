@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 try {
  
-    $task = $_POST['task'];
+    $task = $_POST['task'] ?? '';
 
     $stmt = $pdo->prepare("INSERT INTO messages (message, create_at) VALUES (?, NOW())");
 
