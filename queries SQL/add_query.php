@@ -4,9 +4,10 @@ require_once '../config/config.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 try {
- 
-    $task = $_POST['task'] ?? '';
-
+    $task = cleanInput($_POST['task'] ?? '');
+    if (empty($task)) {
+        echo "The title is required.";
+    }
     $stmt = $pdo->prepare("INSERT INTO messages (message, create_at) VALUES (?, NOW())");
 
     if ($stmt) {

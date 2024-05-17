@@ -15,7 +15,7 @@
 						header("Location: ../public/index.php");
 						exit();
 					} else {
-						echo "Error deleting record.";
+						echo "Error.";
 					}
 				} catch (PDOException $e) {
 					echo "Error: " . $e->getMessage();

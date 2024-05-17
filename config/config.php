@@ -7,5 +7,4 @@ try {
 } catch(PDOException $e) {
     echo "Errore: " . $e->getMessage();
 }
-
 ?>
