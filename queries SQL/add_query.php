@@ -12,6 +12,7 @@ try {
             header("Location: ../public/index.php");
             exit;
         } else {
+            
             echo "Error.";
         }
     } else {

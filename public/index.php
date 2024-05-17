@@ -31,7 +31,7 @@
                 <div>
 					<span><?php echo htmlspecialchars($fetch['message'])?></span>
 					<td >
-                    <button class="delete-button"><a href="../queries SQL/delete_query.php?task_id=<?php echo htmlspecialchars($fetch['id'])?>">delete</a></button>
+                    <button class="delete-button"><a href="../queries SQL/delete_query.php?task_id=<?php echo $fetch['id']?>">delete</a></button>
 					</div>
 				<?php
 					}
