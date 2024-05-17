@@ -1,7 +1,10 @@
 <?php
 require_once '../config/config.php';
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
 try {
+ 
     $task = $_POST['task'];
 
     $stmt = $pdo->prepare("INSERT INTO messages (message, create_at) VALUES (?, NOW())");
@@ -12,7 +15,7 @@ try {
             header("Location: ../public/index.php");
             exit;
         } else {
-            
+
             echo "Error.";
         }
     } else {
@@ -20,5 +23,6 @@ try {
     }
 } catch (PDOException $e) {
     echo "Error" . $e->getMessage();
+}
 }
 ?>
